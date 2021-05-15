@@ -74,6 +74,23 @@ public class GameModel {
 
     }
 
+    /**
+     * Method that check that makes movement possible on the grid.
+     * @param playerName is the player who is try to place the stone
+     * @param x the place of the grid.
+     */
+    public void placeStone(String playerName, int x) {
+        if (isEmptyField(x)) {
+            if (playerName.equals(p1name)) {
+                grid[x] = 1;
+                log.info("{} helyre {} követ rakott le",playerName,x);
+            }
+            else {
+                grid[x] = 2;
+                log.info("{} helyre {} követ rakott le ",playerName,x);
+            }
+        }
+    }
 
     /**
      * Method that check that game has ended with a winner
