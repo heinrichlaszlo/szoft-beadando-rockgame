@@ -82,4 +82,40 @@ public class GameController {
 
     private StringProperty activePlayerName = new SimpleStringProperty();
 
+    public void initialize() {
+        Platform.runLater(() -> {
+            initGame();
+           p1nameText.setText(p1name);
+           p2nameText.setText(p2name);
+        });
+        initGame();
+    }
+    private void createStopWatch() {
+        stopWatchTimeline = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e -> {
+            long millisElapsed = startTime.until(Instant.now(), ChronoUnit.MILLIS);
+            stopWatchLabel.setText(DurationFormatUtils.formatDuration(millisElapsed, "HH:mm:ss"));
+        }), new KeyFrame(javafx.util.Duration.seconds(1)));
+        stopWatchTimeline.setCycleCount(Animation.INDEFINITE);
+        stopWatchTimeline.play();
+    }
+    public void initGame() {
+        messageLabel.setText("");
+        gameModel = new GameModel();
+        gameModel.setP1name(p1name);
+        gameModel.setP2name(p2name);
+        currentPlayer = p1name;
+        startTime = Instant.now();
+        createStopWatch();
+        for (int i = 0; i < 1024; i += 1024/32) {
+            for (int j = 0; j < 100; j += 100) {
+                Rectangle r = new Rectangle(i, j, 1024/32, 1024/32);
+                r.setFill(Color.SANDYBROWN);
+                r.setStroke(Color.BLACK);
+                pane.getChildren().addAll(r); //hozzáadja a dolgokat amiket ki kell rajzolni
+                r.setOnMousePressed(mouseEvent -> mousePressed(mouseEvent, r));
+            }
+        }
+        log.info("Initializing game...");
+    }
+
 }
