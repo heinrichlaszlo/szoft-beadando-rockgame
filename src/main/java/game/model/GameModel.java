@@ -74,4 +74,26 @@ public class GameModel {
 
     }
 
+
+    /**
+     * Method that check that game has ended with a winner
+     * @return true if the game is over and there is a winner. Otherwise return false.
+     */
+    public boolean isGameOver() {
+        isloganabel = false;
+        int count = 0;
+        for (int i = 0; i < grid.length; i++) {
+            isloganabel = false;
+            if (isEmptyField(i)) {
+                count++;
+            }
+        }
+        isloganabel = true;
+        if (count == 0) {
+            log.info(" game over..");
+            return true;
+        }
+        return false;
+    }
+
 }
