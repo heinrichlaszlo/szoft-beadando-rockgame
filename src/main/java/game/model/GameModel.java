@@ -37,4 +37,41 @@ public class GameModel {
      * Method that checks the given field of the grid is empty or not.
      *
      */
+    public boolean isEmptyField(int x) {//melyik elemre akarsz lépni
+        boolean isEmpty = false;
+        if (grid[x] == 0) {
+            if (x == 0) {
+                if (grid[x+1] == 0) {
+                    isEmpty = true;
+                }
+            }
+            else {
+                if (x == 31) {
+                    if(grid[x-1] == 0) {
+                        isEmpty = true;
+                    }
+                }
+            else {
+                    if (grid[x-1] == 0 && grid[x+1] == 0) {
+                        isEmpty = true;
+                    }
+                }
+            }
+        }
+        else{
+            isEmpty=false;
+        }
+        if(isEmpty){
+            return true;
+        }
+        else {
+            if (isloganabel = true) {
+                //log.info(" nem üres mező");
+            }
+            return false;
+
+        }
+
+    }
+
 }
