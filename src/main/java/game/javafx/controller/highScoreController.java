@@ -99,7 +99,7 @@ public class highScoreController {
 
 
     /**
-     * A method that is called when a player clicks on the restart button.
+     * The method that is called when a player clicks on the restart button.
      * @param actionEvent the current action event
      * @throws IOException if the wanted scene can not be found
      */
@@ -114,7 +114,7 @@ public class highScoreController {
     }
 
     /**
-     * A method that is called a the player clicks on the exit button.
+     * The method that is called a the player clicks on the exit button.
      * @param actionEvent the current action event
      */
     public void exitGame(ActionEvent actionEvent) {

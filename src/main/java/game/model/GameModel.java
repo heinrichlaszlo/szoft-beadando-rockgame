@@ -16,7 +16,7 @@ public class GameModel {
 
     private String p2name;
     /**
-     * The arrey representing the configuration of the game grid.
+     * The array is representing the configuration of the game grid.
      */
     private int[] grid = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -34,7 +34,7 @@ public class GameModel {
     }
 
     /**
-     * Method that checks the given field of the grid is empty or not.
+     * The method that checks the given field of the grid is empty or not.
      *
      */
     public boolean isEmptyField(int x) {//melyik elemre akarsz lépni
@@ -75,25 +75,25 @@ public class GameModel {
     }
 
     /**
-     * Method that check that makes movement possible on the grid.
-     * @param playerName is the player who is try to place the stone
+     * The method that checks whether making movement is possible on the grid.
+     * @param playerName is the player who is trying to put a stone.
      * @param x the place of the grid.
      */
     public void placeStone(String playerName, int x) {
         if (isEmptyField(x)) {
             if (playerName.equals(p1name)) {
                 grid[x] = 1;
-                log.info("{} helyre {} követ rakott le",playerName,x);
+                log.info("that is the place: {} , where {} put the stone.",x, playerName);
             }
             else {
                 grid[x] = 2;
-                log.info("{} helyre {} követ rakott le ",playerName,x);
+                log.info("that is the place: {} , where {} put the stone.",x, playerName);
             }
         }
     }
 
     /**
-     * Method that check that game has ended with a winner
+     * The method that checks that game has ended with a winner.
      * @return true if the game is over and there is a winner. Otherwise return false.
      */
     public boolean isGameOver() {
