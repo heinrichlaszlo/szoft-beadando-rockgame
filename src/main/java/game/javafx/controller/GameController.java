@@ -40,4 +40,46 @@ import java.time.temporal.ChronoUnit;
 
 @Slf4j
 public class GameController {
+
+    private Instant startTime;
+    private Timeline stopWatchTimeline;
+    @FXML
+    private Text stopWatchLabel;
+
+    @FXML
+    private Pane outerPane;
+
+    @FXML
+    private Pane pane;
+
+    @FXML
+    private Label messageLabel;
+
+    private String playerName1;
+
+    private String playerName2;
+
+    @FXML
+    private TextField playerNameTextField;
+    @FXML
+    private TextField playerNameTextField1;
+
+    private String p1name;
+
+    private String p2name;
+
+    @FXML
+    private Text p1nameText;
+
+    @FXML
+    private Text p2nameText;
+
+    private String currentPlayer;
+
+    private GameModel gameModel;
+
+    private GameResultDao gameResultDao;
+
+    private StringProperty activePlayerName = new SimpleStringProperty();
+
 }
