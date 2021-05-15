@@ -118,4 +118,93 @@ public class GameController {
         log.info("Initializing game...");
     }
 
+
+    private void mousePressed(MouseEvent mouseEvent, Rectangle r) {
+        System.out.println((int)r.getX() / 32); //elosztom 32-vel mert ennyi a tábla
+        if(gameModel.isEmptyField((int)r.getX() / 32)) {
+            if (currentPlayer.equals(gameModel.getP1name())) {
+                gameModel.placeStone(currentPlayer, (int)r.getX() / 32);
+               //kör kirajzolás
+                Circle c = new Circle();
+                double radius = 32 / 3.0;
+                int x = 32 / 2 + 32 * (0+(int)r.getX()/32);
+                int y = 32 / 2 + 32 * (0+(int)r.getY()/32);
+
+                c.setRadius(radius);
+                c.setTranslateX(x);
+                c.setTranslateY(y);
+                c.setFill(Color.SADDLEBROWN);
+                pane.getChildren().addAll(c);
+            }
+            else {
+                gameModel.placeStone(currentPlayer, (int) r.getX() / 32);
+                Circle c = new Circle();
+                double radius = 32 / 3.0;
+                int x = 32 / 2 + 32 * (0+(int)r.getX()/32);
+                int y = 32 / 2 + 32 * (0+(int)r.getY()/32);
+
+                c.setRadius(radius);
+                c.setTranslateX(x);
+                c.setTranslateY(y);
+                c.setFill(Color.BROWN);
+                pane.getChildren().addAll(c);
+            }
+            if(gameModel.isGameOver()) {
+                System.out.println(currentPlayer+ " won the game!");
+                messageLabel.setText("Gratulálok, " + currentPlayer + " nyertél!");
+
+                gameModel.setWinnerName(currentPlayer);
+
+                gameResultDao = new GameResultDao();
+                gameResultDao.persist(createGameResult());
+                log.info("{} is the winner of the game.", currentPlayer);
+            }
+
+            if (currentPlayer.equals(gameModel.getP1name())) {
+                this.currentPlayer = gameModel.getP2name();
+            }
+            else {
+                this.currentPlayer = gameModel.getP1name();
+            }
+        }
+    }
+
+    public GameResult createGameResult(){
+        String loser = "";
+        if(gameModel.getWinnerName().equals(gameModel.getP1name())){
+            loser = gameModel.getP2name();
+        }
+        else {
+            loser = gameModel.getP1name();
+        }
+        return GameResult.builder().name(gameModel.getWinnerName())
+                .duration(Duration.between(startTime,Instant.now()))
+                .opponentName(loser).build();
+    }
+    public void exitGame(ActionEvent actionEvent) {
+        log.debug("{} button has been pressed.", ((Button)actionEvent.getSource()).getText());
+        Platform.exit();
+        log.info("Exit..");
+    }
+
+    public void resetGame(ActionEvent actionEvent) {
+        log.debug("{} button has been pressed.", ((Button)actionEvent.getSource()).getText());
+        initGame();
+        log.info("Reset game..");
+    }
+    public void setPlayersName(String p1name, String p2name) {
+        this.p1name = p1name;
+        this.p2name = p2name;
+        log.info("Setting player name");
+    }
+
+    public void handleHighScoreButton(ActionEvent actionEvent) throws IOException {
+        log.debug("{} button has been pressed.", ((Button)actionEvent.getSource()).getText());
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/highscores.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+        log.info("Loading highscores..");
+    }
 }
