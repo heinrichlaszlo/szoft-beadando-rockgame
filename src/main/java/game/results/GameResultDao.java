@@ -18,11 +18,9 @@ public class GameResultDao extends GenericJpaDao<GameResult> {
     }
 
     /**
-     * Returns the list of all results with respect to the number of steps
-     * and the time spent for playing the game.
+     * 
      *
-     * @return the list of all results with respect to the number of steps
-     * and the time spent for playing the game
+     * @return the list of all results with respect the time spent for playing the game
      */
     @Transactional
     public List<GameResult> findAll() {
