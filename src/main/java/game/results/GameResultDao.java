@@ -18,7 +18,7 @@ public class GameResultDao extends GenericJpaDao<GameResult> {
     }
 
     /**
-     * 
+     *
      *
      * @return the list of all results with respect the time spent for playing the game
      */
