@@ -1,7 +1,6 @@
 package game.javafx.controller;
 
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,18 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.inject.Inject;
 import java.io.IOException;
 
 @Slf4j
 public class launchController {
-
-    @Inject
-    private FXMLLoader fxmlLoader;
 
     @FXML
     private TextField playerNameTextField;

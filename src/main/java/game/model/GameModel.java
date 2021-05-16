@@ -2,7 +2,6 @@ package game.model;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import lombok.Data;
 import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;

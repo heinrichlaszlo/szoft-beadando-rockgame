@@ -1,6 +1,5 @@
 package game.javafx.controller;
 
-import com.sun.javafx.logging.Logger;
 import game.model.GameModel;
 import game.results.GameResult;
 import game.results.GameResultDao;
@@ -28,11 +27,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DurationFormatUtils;
-
 import java.time.Instant;
-//import org.apache.commons.lang.time.DurationFormatUtils;
-
-
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -42,29 +37,19 @@ import java.time.temporal.ChronoUnit;
 public class GameController {
 
     private Instant startTime;
+
     private Timeline stopWatchTimeline;
+
     @FXML
     private Text stopWatchLabel;
 
-    @FXML
-    private Pane outerPane;
-
-    @FXML
+   @FXML
     private Pane pane;
 
     @FXML
     private Label messageLabel;
 
-    private String playerName1;
-
-    private String playerName2;
-
-    @FXML
-    private TextField playerNameTextField;
-    @FXML
-    private TextField playerNameTextField1;
-
-    private String p1name;
+     private String p1name;
 
     private String p2name;
 
@@ -114,7 +99,7 @@ public class GameController {
                 Rectangle r = new Rectangle(i, j, 1024/32, 1024/32);
                 r.setFill(Color.SANDYBROWN);
                 r.setStroke(Color.BLACK);
-                pane.getChildren().addAll(r); //hozzáadja a dolgokat amiket ki kell rajzolni
+                pane.getChildren().addAll(r);
                 r.setOnMousePressed(mouseEvent -> mousePressed(mouseEvent, r));
             }
         }
@@ -124,7 +109,7 @@ public class GameController {
 
     private void mousePressed(MouseEvent mouseEvent, Rectangle r) {
         errorLabel.setText("");
-        System.out.println((int)r.getX() / 32); //elosztom 32-vel mert ennyi a tábla
+        System.out.println((int)r.getX() / 32);
         if(gameModel.isEmptyField((int)r.getX() / 32)) {
             if (currentPlayer.equals(gameModel.getP1name())) {
 
