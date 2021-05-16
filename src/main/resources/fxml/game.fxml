@@ -10,17 +10,29 @@
 <Pane fx:id="outerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1224.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.javafx.controller.GameController">
    <children>
       <Pane fx:id="pane" layoutX="100.0" layoutY="200.0" prefHeight="200.0" prefWidth="1024.0" />
-      <Button fx:id="resetGameButton" layoutX="237.0" layoutY="472.0" mnemonicParsing="false" onAction="#resetGame" text="RESET GAME" />
-      <Button fx:id="exitGameButton" layoutX="993.0" layoutY="460.0" mnemonicParsing="false" onAction="#exitGame" text="EXIT" />
+      <Button fx:id="resetGameButton" layoutX="223.0" layoutY="472.0" mnemonicParsing="false" onAction="#resetGame" text="RESET GAME" />
+      <Button fx:id="exitGameButton" layoutX="892.0" layoutY="472.0" mnemonicParsing="false" onAction="#exitGame" text="EXIT" />
       <VBox layoutX="1116.0" layoutY="193.0" prefHeight="200.0" prefWidth="100.0" />
-      <Label fx:id="messageLabel" layoutX="480.0" layoutY="63.0" text="KÖVES GAMESZKO">
+      <Label fx:id="messageLabel" layoutX="418.0" layoutY="145.0" prefHeight="35.0" prefWidth="531.0">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Text fx:id="p1nameText" layoutX="274.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="p2nameText" layoutX="1002.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="stopWatchLabel" layoutX="598.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button fx:id="highScoreButton" layoutX="564.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleHighScoreButton" text="HIGHSCORE" />
+      <Text fx:id="p1nameText" layoutX="209.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="p2nameText" layoutX="953.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="stopWatchLabel" layoutX="569.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button fx:id="highScoreButton" layoutX="535.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleHighScoreButton" text="HIGHSCORE" />
+      <Text layoutX="473.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock Game">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Text>
+      <Text layoutX="142.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1:" />
+      <Text layoutX="892.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2:" />
+      <Label fx:id="errorLabel" layoutX="493.0" layoutY="433.0" prefHeight="16.0" prefWidth="262.0" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
