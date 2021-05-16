@@ -82,6 +82,9 @@ public class GameController {
 
     private StringProperty activePlayerName = new SimpleStringProperty();
 
+    @FXML
+    private Label errorLabel;
+
     public void initialize() {
         Platform.runLater(() -> {
             initGame();
@@ -120,9 +123,11 @@ public class GameController {
 
 
     private void mousePressed(MouseEvent mouseEvent, Rectangle r) {
+        errorLabel.setText("");
         System.out.println((int)r.getX() / 32); //elosztom 32-vel mert ennyi a tábla
         if(gameModel.isEmptyField((int)r.getX() / 32)) {
             if (currentPlayer.equals(gameModel.getP1name())) {
+
                 gameModel.placeStone(currentPlayer, (int)r.getX() / 32);
                //kör kirajzolás
                 Circle c = new Circle();
@@ -167,6 +172,10 @@ public class GameController {
                 this.currentPlayer = gameModel.getP1name();
             }
         }
+        else{
+            errorLabel.setText("You can't do that!");
+        }
+
     }
 
     public GameResult createGameResult(){
