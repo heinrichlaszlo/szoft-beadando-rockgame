@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,6 +30,12 @@ public class launchController {
 
     @FXML
     private Label errorLabel;
+
+    @FXML
+    private ImageView kep;
+
+    @FXML
+    private ImageView kep2;
 
     @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public void startAction(ActionEvent actionEvent) throws IOException {
@@ -51,6 +59,13 @@ public class launchController {
             stage.show();
             log.info("The names has been set to {} and {}, loading game scene", playerNameTextField.getText(), playerNameTextField1.getText());
         }
+
+    }
+    @FXML
+    private void initialize(){
+        kep.setImage(new Image(getClass().getResource("/pictures/stonegamepic.png").toExternalForm()));
+        kep2.setImage(new Image(getClass().getResource("/pictures/stonegamepic2.png").toExternalForm()));
+
     }
     public void exitGame(ActionEvent actionEvent) {
         log.debug("{} button has been pressed.", ((Button)actionEvent.getSource()).getText());

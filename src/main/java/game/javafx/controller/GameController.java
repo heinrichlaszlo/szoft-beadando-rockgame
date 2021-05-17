@@ -18,6 +18,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -49,7 +51,7 @@ public class GameController {
     @FXML
     private Label messageLabel;
 
-     private String p1name;
+    private String p1name;
 
     private String p2name;
 
@@ -70,6 +72,12 @@ public class GameController {
     @FXML
     private Label errorLabel;
 
+    @FXML
+    private ImageView kep3;
+
+    @FXML
+    private ImageView kep4;
+
     public void initialize() {
         Platform.runLater(() -> {
             initGame();
@@ -77,6 +85,8 @@ public class GameController {
            p2nameText.setText(p2name);
         });
         initGame();
+        kep3.setImage(new Image(getClass().getResource("/pictures/stonegamepic3.png").toExternalForm()));
+        kep4.setImage(new Image(getClass().getResource("/pictures/stonegamepic2.png").toExternalForm()));
     }
     private void createStopWatch() {
         stopWatchTimeline = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e -> {

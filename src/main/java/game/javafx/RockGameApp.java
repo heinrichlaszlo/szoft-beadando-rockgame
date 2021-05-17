@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import javax.inject.Inject;
 
-public class StoneGameApp extends Application {
+public class RockGameApp extends Application {
     @Inject
     private FXMLLoader fxmlLoader;
 

@@ -3,22 +3,25 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F9C164" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.javafx.controller.launchController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.javafx.controller.launchController">
     <children>
-        <Label layoutX="138.0" layoutY="76.0" text="köves gameszko" textFill="#002366">
+        <Label layoutX="197.0" layoutY="74.0" text="Rock Game" textAlignment="CENTER" textFill="#002366">
             <font>
                 <Font name="MathJax_Main-Bold" size="36.0" />
             </font>
         </Label>
-        <Label layoutX="240.0" layoutY="147.0" text="Player1 name:" />
-        <TextField fx:id="playerNameTextField" layoutX="208.0" layoutY="174.0" prefHeight="26.0" prefWidth="158.0" />
-        <Button fx:id="startButton" layoutX="235.0" layoutY="285.0" mnemonicParsing="false" onAction="#startAction" prefHeight="51.0" prefWidth="105.0" text="Start game" />
+        <Label layoutX="253.0" layoutY="148.0" text="Player1 name:" />
+        <TextField fx:id="playerNameTextField" layoutX="221.0" layoutY="174.0" prefHeight="26.0" prefWidth="158.0" />
+        <Button fx:id="startButton" layoutX="248.0" layoutY="286.0" mnemonicParsing="false" onAction="#startAction" prefHeight="51.0" prefWidth="105.0" text="Start game" />
         <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="200.0" prefHeight="17.0" prefWidth="329.0" textFill="#e30e0e" />
-        <Label layoutX="240.0" layoutY="217.0" text="Player2 name:" />
-      <Button fx:id="exitGameButton" layoutX="265.0" layoutY="344.0" mnemonicParsing="false" onAction="#exitGame" text="EXIT" />
-        <TextField fx:id="playerNameTextField1" layoutX="209.0" layoutY="238.0" prefHeight="26.0" prefWidth="158.0" />
+        <Label layoutX="253.0" layoutY="217.0" text="Player2 name:" />
+      <Button fx:id="exitGameButton" layoutX="277.0" layoutY="345.0" mnemonicParsing="false" onAction="#exitGame" text="EXIT" />
+        <TextField fx:id="playerNameTextField1" layoutX="221.0" layoutY="244.0" prefHeight="26.0" prefWidth="158.0" />
+      <ImageView fx:id="kep" fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="kep2" fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true" />
     </children>
 </Pane>
