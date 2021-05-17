@@ -3,11 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>rockgame</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <scm>
+        <connection>scm:git:https://github.com/heinrichlaszlo/szoft-beadando-rockgame.git</connection>
+        <developerConnection>scm:git:https://github.com/heinrichlaszlo/szoft-beadando-rockgame.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>heinrichl</id>
+            <name>Heinrich László</name>
+            <email>heinrichlaszlo99@gmail.com</email>
+            <organization>Faculty of Informatics, University of Debrecen</organization>
+            <organizationUrl>https://inf.unideb.hu/</organizationUrl>
+        </developer>
+    </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -16,10 +27,8 @@
         <exec.mainClass>game.javafx.Main</exec.mainClass>
         <exec.cleanupDaemonThreads>false</exec.cleanupDaemonThreads>
     </properties>
-
     <dependencies>
-
-            <dependency>
+        <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-controls</artifactId>
                 <version>15.0.1</version>
