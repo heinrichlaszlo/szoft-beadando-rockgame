@@ -86,7 +86,7 @@ public class GameController {
         });
         initGame();
         kep3.setImage(new Image(getClass().getResource("/pictures/stonegamepic3.png").toExternalForm()));
-        kep4.setImage(new Image(getClass().getResource("/pictures/stonegamepic2.png").toExternalForm()));
+        kep4.setImage(new Image(getClass().getResource("/pictures/stonegamepic4.png").toExternalForm()));
     }
     private void createStopWatch() {
         stopWatchTimeline = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e -> {
