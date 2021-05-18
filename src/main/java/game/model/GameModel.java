@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Class representing the model of the game and the board.
+ */
 @Generated
 @Slf4j
 @Data
