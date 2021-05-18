@@ -13,13 +13,13 @@ The next player in the circle will lose if there is no compartment where they ca
 ### Run the project
     mvn clean compile exec:java
 
-###Generate docs
+### Generate docs
     mvn site
 
-###Add Clover coverage report
+### Add Clover coverage report
     mvn -P clover site
 
-###Generatig package
+### Generatig package
     mvn package
 
 ### Running the generated package
