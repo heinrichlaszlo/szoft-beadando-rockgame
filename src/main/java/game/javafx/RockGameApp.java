@@ -7,7 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javax.inject.Inject;
-
+/**
+ * The class that controls the application GUI.
+ */
 public class RockGameApp extends Application {
     @Inject
     private FXMLLoader fxmlLoader;

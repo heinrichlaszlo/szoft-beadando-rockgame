@@ -23,11 +23,19 @@ public class GameModel {
     private String winner;
     private String loser;
     private boolean isloganabel = true;
+    /**
+     * Null arg constructor.
+     */
     public GameModel(){}
 
     @FXML
     private Label messageLabel;
 
+    /**
+     * Constructor which takes a array and set this array to the grid.
+     *
+     * @param grid array that represents the state of the game and the board.
+     */
     public GameModel(int[] grid) {
         this.grid = grid;
     }
@@ -36,7 +44,7 @@ public class GameModel {
      * The method that checks the given field of the grid is empty or not.
      *
      */
-    public boolean isEmptyField(int x) {//melyik elemre akarsz lépni
+    public boolean isEmptyField(int x) {
         boolean isEmpty = false;
         if (grid[x] == 0) {
             if (x == 0) {
